@@ -5,11 +5,13 @@ const router = express.Router()
 const Product = require('../models/product.js');
 
 router.post('/', (req, res) => {
-  console.log(req.body)
+  const {item, image, price, description} = req.body
 
-  const {name, image, price, description} = req.body
-
-  Product.create(name, image, price, description).then((product) => res.json(product));
+  Product.create(item, image, price, description).then((product) => res.json(product));
 })
+
+router.get('/', (req, res) => {
+  Product.findAll().then((products) => res.json(products));
+});
 
 module.exports = router

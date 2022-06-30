@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = process.env.PORT || 3002
+const port = process.env.PORT || 3001
 
 app.listen(port, () => console.log(`server listening on port: ${port}`))
 
@@ -12,10 +12,14 @@ const logger = require('./middlewares/logger');
 
 //controllers
 const productsController = require('./controllers/products_controller')
+const cartsController = require('./controllers/carts_controller')
+const purchasesController = require('./controllers/purchases_controller')
 
 app.use(logger);
 
 app.use('/api/products', productsController)
+app.use('/api/cart', cartsController)
+app.use('/api/purchases', purchasesController)
 
 
 
@@ -32,15 +36,3 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
   });
 }
-
-
-//database
-
-
-//routes
-// app.get('/burgerLayers', (req, res) => res.json({burgerLayers}))
-
-// app.post('/burgerLayers', (req, res) => {
-//   burgerLayers = req.body.burgerLayers
-//   res.json({burgerLayers})
-// })

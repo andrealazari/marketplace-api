@@ -11,8 +11,26 @@ CREATE TABLE users(
 
 CREATE TABLE products(
   id SERIAL PRIMARY KEY,
-  name TEXT,
+  item TEXT,
   image TEXT,
   price TEXT,
+  description TEXT
+);
+
+CREATE TABLE carts(
+  id SERIAL PRIMARY KEY,
+  item TEXT,
+  price TEXT,
+  item_id TEXT,
+  image TEXT,
+  description TEXT
+);
+
+CREATE TABLE purchases(
+  id SERIAL PRIMARY KEY,
+  item TEXT,
+  price TEXT,
+  item_id TEXT,
+  image TEXT,
   description TEXT
 );
