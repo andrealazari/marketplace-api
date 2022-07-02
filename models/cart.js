@@ -17,7 +17,14 @@ const Cart = {
     SELECT * FROM carts
     `
     return db.query(sql).then((dbRes) => dbRes.rows);
-  }
+  },
+
+  delete: (itemId) => {
+    const sql = `
+      DELETE FROM carts WHERE id = $1
+    `;
+    return db.query(sql, [itemId]);
+  },
 };
 
 module.exports = Cart;

@@ -14,13 +14,14 @@ const logger = require('./middlewares/logger');
 const productsController = require('./controllers/products_controller')
 const cartsController = require('./controllers/carts_controller')
 const purchasesController = require('./controllers/purchases_controller')
+const editController = require('./controllers/edit_controller')
 
 app.use(logger);
 
 app.use('/api/products', productsController)
 app.use('/api/cart', cartsController)
 app.use('/api/purchases', purchasesController)
-
+app.use('/api/edit', editController)
 
 
 
