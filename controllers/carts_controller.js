@@ -16,7 +16,6 @@ router.get('/', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   const itemId = req.params.id;
-  console.log(itemId)
 
   Cart.delete(itemId).then(() => res.json({ message: 'delete successfully' }));
 });

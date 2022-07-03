@@ -14,7 +14,8 @@ CREATE TABLE products(
   item TEXT,
   image TEXT,
   price TEXT,
-  description TEXT
+  description TEXT,
+  userid TEXT
 );
 
 CREATE TABLE carts(
@@ -23,7 +24,8 @@ CREATE TABLE carts(
   price TEXT,
   item_id TEXT,
   image TEXT,
-  description TEXT
+  description TEXT,
+  user_id TEXT
 );
 
 CREATE TABLE purchases(
@@ -32,5 +34,6 @@ CREATE TABLE purchases(
   price TEXT,
   item_id TEXT,
   image TEXT,
-  description TEXT
+  description TEXT,
+  user_id TEXT
 );
