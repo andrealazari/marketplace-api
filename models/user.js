@@ -9,7 +9,7 @@ const User = {
 
     return db
       .query(sql, [avatar, name, email,  password])
-      .then((dbRes) => dbRes.rows[0].name);
+      .then((dbRes) => dbRes.rows[0]);
   },
 
   findByEmail: (email) => {

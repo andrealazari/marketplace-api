@@ -7,7 +7,7 @@ const Edit = require('../models/edit.js');
 router.put('/', (req, res) => {
   const {item, price, description, id} = req.body
 
-  Edit.changeDetails(item, price, description, id).then((product) =>
+  Edit.changeDetails(item, price, description, Number(id)).then((product) =>
     res.json(product)
   )
 });

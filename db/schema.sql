@@ -25,7 +25,7 @@ CREATE TABLE carts(
   item_id TEXT,
   image TEXT,
   description TEXT,
-  user_id TEXT
+  userid TEXT
 );
 
 CREATE TABLE purchases(
@@ -35,5 +35,5 @@ CREATE TABLE purchases(
   item_id TEXT,
   image TEXT,
   description TEXT,
-  user_id TEXT
+  userid TEXT
 );

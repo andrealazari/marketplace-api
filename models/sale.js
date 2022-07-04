@@ -4,7 +4,7 @@ const Sale = {
   
   delete: (itemId) => {
     const sql = `
-      DELETE FROM products WHERE id = $1
+      DELETE FROM products WHERE id = $1;
     `;
     return db.query(sql, [itemId]);
   },
