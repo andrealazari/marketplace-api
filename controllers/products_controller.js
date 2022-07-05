@@ -17,4 +17,10 @@ router.get('/', (req, res) => {
   
 });
 
+router.delete('/:id', (req, res) => {
+  const itemId = req.params.id;
+
+  Product.delete(itemId).then(() => res.json({ message: 'delete successfully' }));
+});
+
 module.exports = router

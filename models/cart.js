@@ -21,7 +21,7 @@ const Cart = {
 
   delete: (itemId) => {
     const sql = `
-      DELETE FROM carts WHERE id = $1
+      DELETE FROM carts WHERE item_id = $1
     `;
     return db.query(sql, [itemId]);
   },

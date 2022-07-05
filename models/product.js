@@ -19,6 +19,13 @@ const Product = {
     return db.query(sql).then((dbRes) => dbRes.rows);
   },
 
+  delete: (itemId) => {
+    const sql = `
+      DELETE FROM products WHERE id = $1
+    `;
+    return db.query(sql, [itemId]);
+  },
+
   findAllByNotId: (user_id) => {
     const sql = `
     SELECT * FROM products WHERE id != userid
