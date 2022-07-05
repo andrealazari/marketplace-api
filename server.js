@@ -1,7 +1,6 @@
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 3001
-const dotenv = require('dotenv').config()
 
 app.listen(port, () => console.log(`server listening on port: ${port}`))
 
@@ -32,11 +31,6 @@ app.use('/api/edit', editController)
 app.use('/api/sales', salesController)
 app.use('/api/users', usersController)
 app.use('/api/sessions', sessionsController)
-
-
-
-
-
 
 
 if (process.env.NODE_ENV === 'production') {
