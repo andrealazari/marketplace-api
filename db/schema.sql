@@ -15,7 +15,9 @@ CREATE TABLE products(
   image TEXT,
   price TEXT,
   description TEXT,
-  userid TEXT
+  userid TEXT,
+  avatar TEXT,
+  username TEXT
 );
 
 CREATE TABLE carts(

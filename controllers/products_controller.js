@@ -6,9 +6,9 @@ const Product = require('../models/product.js');
 
 
 router.post('/', (req, res) => {
-  const {item, image, price, description, userid} = req.body
+  const {item, image, price, description, userid, avatar, userName} = req.body
 
-  Product.create(item, image, price, description, userid).then((product) => res.json(product));
+  Product.create(item, image, price, description, userid, avatar, userName).then((product) => res.json(product));
 })
 
 router.get('/', (req, res) => {

@@ -5,9 +5,9 @@ const router = express.Router()
 const Cart = require('../models/cart.js');
 
 router.post('/', (req, res) => {
-  const {item, price, item_id, image, description} = req.body
+  const {item, price, item_id, image, description, userid} = req.body
 
-  Cart.create(item, price, item_id, image, description).then((product) => res.json(product));
+  Cart.create(item, price, item_id, image, description, userid).then((product) => res.json(product));
 })
 
 router.get('/', (req, res) => {

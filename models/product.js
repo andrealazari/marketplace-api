@@ -1,14 +1,14 @@
 const db = require('../db/db');
 
 const Product = {
-  create: (item, image, price, description, userid) => {
+  create: (item, image, price, description, userid, avatar, userName) => {
     const sql = `
-      INSERT INTO products(item, image, price, description, userid)
-      VALUES ($1, $2, $3, $4, $5)
+      INSERT INTO products(item, image, price, description, userid, avatar, username)
+      VALUES ($1, $2, $3, $4, $5, $6, $7)
       RETURNING *
     `
     return db
-      .query(sql, [item, image, price, description, userid])
+      .query(sql, [item, image, price, description, userid, avatar, userName])
       .then((dbRes) => dbRes.rows[0]);
   },
 

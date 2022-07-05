@@ -5,7 +5,7 @@ const router = express.Router()
 const Purchase = require('../models/purchase.js');
 
 router.post('/', (req, res) => {
-  const {item, price, item_id, image, description} = req.body
+  const {item, price, item_id, image, description, userid} = req.body
 
   Purchase.create(req.body).then((product) => res.json(product));
 })
